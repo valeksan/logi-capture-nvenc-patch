@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 LogiCapture NVENC Patch contributors
+
 Set-StrictMode -Version Latest
 
 function Get-PatchLogPath {

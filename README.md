@@ -211,9 +211,13 @@ Invoke-Pester .\tests\Patcher.Tests.ps1
 This is an unofficial interoperability project. It does not grant any rights to
 LogiCapture, NVENC, or other proprietary software. Distributing patched Logitech
 binaries is not permitted by this project; only the patch data and scripts are
-provided. Read [DISCLAIMER.md](DISCLAIMER.md) before use.
+provided. Read [DISCLAIMER.md](DISCLAIMER.md) and [NOTICE](NOTICE) before use.
+
+The MIT license does not make modification of LogiCapture lawful, does not
+override Logitech's EULA, and does not grant trademark rights.
 
 ## License
 
-The scripts and documentation in this repository are licensed under the MIT
-License. See [LICENSE](LICENSE).
+The original scripts, tests, documentation, and patch data in this repository
+are licensed under the MIT License. This license does not cover LogiCapture,
+NVENC, or any third-party software. See [LICENSE](LICENSE) and [NOTICE](NOTICE).

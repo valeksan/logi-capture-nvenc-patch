@@ -1,0 +1,32 @@
+LogiCapture NVENC Patch
+Copyright (c) 2026 LogiCapture NVENC Patch contributors
+
+License scope
+-------------
+
+The MIT license in this repository applies only to the original scripts,
+documentation, tests, and patch data authored by this project's contributors.
+
+It does not grant any license or rights to:
+
+- LogiCapture, VHMultiWriterExt2.exe, VHMediaCOM.dll, or any other Logitech
+  software;
+- NVIDIA NVENC, nvEncodeAPI64.dll, nvcuda.dll, or the NVIDIA SDK;
+- any third-party installer, binary, product key, or activation material.
+
+Users must obtain LogiCapture and all required NVIDIA software legally. The
+MIT license does not override the LogiCapture end-user license agreement or
+make modification or redistribution of proprietary binaries lawful.
+
+No trademark license
+--------------------
+
+Logitech, LogiCapture, NVIDIA, and NVENC are trademarks or registered
+trademarks of their respective owners. Their use in this project is descriptive
+only and does not imply affiliation or endorsement.
+
+No legal advice
+---------------
+
+This notice describes the scope of this project's license. It is not legal
+advice. See DISCLAIMER.md for additional warnings.
