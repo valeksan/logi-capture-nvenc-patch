@@ -1,0 +1,21 @@
+# Local binaries and backups
+*.exe
+*.dll
+*.bak
+*.tmp
+backup/
+
+# Logs and test output
+*.log
+*.pml
+*.csv
+TestResults/
+PesterResults/
+
+# Editor and OS files
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store

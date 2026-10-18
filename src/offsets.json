@@ -1,0 +1,273 @@
+{
+    "schema":  1,
+    "product":  "LogiCapture",
+    "target":  "VHMultiWriterExt2.exe",
+    "version":  "2.08.11",
+    "architecture":  "x64",
+    "original_size":  1000864,
+    "original_sha256":  "1E6671E8427C3A7F7EE6118E12D81E2BC358285EA56117F8EF7C05B6CC5D41A3",
+    "patched_sha256":  "159C3CE0C6A0A480A27A8D469075239042DA35661B2F064A405154D83010C10B",
+    "notes":  "Offsets are file offsets. rva is provided for documentation only. Apply only to the exact original build.",
+    "patches":  [
+                    {
+                        "name":  "function_list_version",
+                        "description":  "NV_ENCODE_API_FUNCTION_LIST: API 8.1 -> 11.1",
+                        "offset":  "0x2364B",
+                        "rva":  "0x2424B",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "nvenc_version_const_245D3",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x239D3",
+                        "rva":  "0x245D3",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "nvenc_version_const_24668",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x23A68",
+                        "rva":  "0x24668",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "session_params_version",
+                        "description":  "NV_ENC_OPEN_ENCODE_SESSION_EX_PARAMS version: 8.1 -> 11.1",
+                        "offset":  "0x2691E",
+                        "rva":  "0x2751E",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "session_api_version",
+                        "description":  "NV_ENC_OPEN_ENCODE_SESSION_EX_PARAMS apiVersion: 8 -> 11",
+                        "offset":  "0x269B2",
+                        "rva":  "0x275B2",
+                        "section":  ".text",
+                        "length":  4,
+                        "old":  "08000001",
+                        "new":  "0B000000"
+                    },
+                    {
+                        "name":  "preset_config_versions",
+                        "description":  "Preset config + inner NV_ENC_CONFIG versions -> API 11.1 / config v9",
+                        "offset":  "0x26E31",
+                        "rva":  "0x27A31",
+                        "section":  ".text",
+                        "length":  14,
+                        "old":  "080004F1C785E8350000080007F1",
+                        "new":  "0B000471C785E83500000B000971"
+                    },
+                    {
+                        "name":  "preset_config_ex_call",
+                        "description":  "Redirect legacy nvEncGetEncodePresetConfig call to Ex wrapper with tuningInfo",
+                        "offset":  "0x26E76",
+                        "rva":  "0x27A76",
+                        "section":  ".text",
+                        "length":  6,
+                        "old":  "FF159C590C00",
+                        "new":  "E8555E080090"
+                    },
+                    {
+                        "name":  "config_and_rc_versions",
+                        "description":  "NV_ENC_CONFIG v7 -> v9 and RC params -> API 11.1",
+                        "offset":  "0x26ECD",
+                        "rva":  "0x27ACD",
+                        "section":  ".text",
+                        "length":  11,
+                        "old":  "080007F1C7850828000008",
+                        "new":  "0B000971C785082800000B"
+                    },
+                    {
+                        "name":  "init_params_version",
+                        "description":  "NV_ENC_INITIALIZE_PARAMS version: 8.1 -> 11.1",
+                        "offset":  "0x270DF",
+                        "rva":  "0x27CDF",
+                        "section":  ".text",
+                        "length":  4,
+                        "old":  "080005F1",
+                        "new":  "0B000571"
+                    },
+                    {
+                        "name":  "init_tuning_hook",
+                        "description":  "Hook before nvEncInitializeEncoder to set tuningInfo=LOW_LATENCY",
+                        "offset":  "0x2715B",
+                        "rva":  "0x27D5B",
+                        "section":  ".text",
+                        "length":  7,
+                        "old":  "488D85E0270000",
+                        "new":  "E9C05B08009090"
+                    },
+                    {
+                        "name":  "nvenc_version_const_27F08",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x27308",
+                        "rva":  "0x27F08",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "nvenc_version_const_27F98",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x27398",
+                        "rva":  "0x27F98",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "nvenc_version_const_28022",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x27422",
+                        "rva":  "0x28022",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "nvenc_version_const_281D3",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x275D3",
+                        "rva":  "0x281D3",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "nvenc_version_const_2825D",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x2765D",
+                        "rva":  "0x2825D",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "rc_and_init_versions",
+                        "description":  "NV_ENC_RC_PARAMS and NV_ENC_INITIALIZE_PARAMS versions -> API 11.1",
+                        "offset":  "0x27E2E",
+                        "rva":  "0x28A2E",
+                        "section":  ".text",
+                        "length":  11,
+                        "old":  "080001F1C74598080005F1",
+                        "new":  "0B000171C745980B000571"
+                    },
+                    {
+                        "name":  "nvenc_version_const_28EDC",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x282DC",
+                        "rva":  "0x28EDC",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "nvenc_version_const_29143",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x28543",
+                        "rva":  "0x29143",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "nvenc_version_const_29289",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x28689",
+                        "rva":  "0x29289",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "nvenc_version_const_293AA",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x287AA",
+                        "rva":  "0x293AA",
+                        "section":  ".text",
+                        "length":  4,
+                        "old":  "080004F1",
+                        "new":  "0B000471"
+                    },
+                    {
+                        "name":  "nvenc_version_const_2961B",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x28A1B",
+                        "rva":  "0x2961B",
+                        "section":  ".text",
+                        "length":  4,
+                        "old":  "080004F1",
+                        "new":  "0B000471"
+                    },
+                    {
+                        "name":  "nvenc_version_const_298E8",
+                        "description":  "NVENC struct version constant: API 8.1 -> 11.1",
+                        "offset":  "0x28CE8",
+                        "rva":  "0x298E8",
+                        "section":  ".text",
+                        "length":  1,
+                        "old":  "08",
+                        "new":  "0B"
+                    },
+                    {
+                        "name":  "preset_config_ex_wrapper",
+                        "description":  "Code cave: wrapper for nvEncGetEncodePresetConfigEx",
+                        "offset":  "0xACCD0",
+                        "rva":  "0xAD8D0",
+                        "section":  ".text",
+                        "length":  38,
+                        "old":  "0000000000000000000000000000000000000000000000000000000000000000000000000000",
+                        "new":  "4D8BD941B9020000004883EC284C895C2420488B052FFB03004805D0000000FFD04883C428C3"
+                    },
+                    {
+                        "name":  "tuning_info_cave",
+                        "description":  "Code cave: set tuningInfo=LOW_LATENCY in initialize params",
+                        "offset":  "0xACD20",
+                        "rva":  "0xAD920",
+                        "section":  ".text",
+                        "length":  22,
+                        "old":  "00000000000000000000000000000000000000000000",
+                        "new":  "C785C804000002000000488D85E0270000E92CA4F7FF"
+                    },
+                    {
+                        "name":  "preset_guid_table_1",
+                        "description":  "Legacy preset GUID table -> NVIDIA P1-P7 preset GUIDs",
+                        "offset":  "0xC39E8",
+                        "rva":  "0xC4BE8",
+                        "section":  ".rdata",
+                        "length":  144,
+                        "old":  "E798991464231D4182EF17988809340916B7BFD504C6E7449BB8DEA5510FC3AC442A0867AD4BFA4898EA93056D150A58B933F7C597EAF94CBEC2BF78A74FD105C521DF49FA6DEB4F97876ACC9EFFB72650E4E382BBBD404E989C82A90DF9EF321DA7DB347BA78F4B9C3EB6D5DA24C0129FC5E46046E88444A56DCD45BE9FDDF605B7DFB2BD4E494C9B5F24A777D3E587",
+                        "new":  "128C8484716F134C931B53E283F57974128C8484716F134C931B53E283F57974B8CF81F5D688814393F0DF13F9C27DABB4E6C6217A29BA4C998FB6CBDE72ADE326B8A79006DF6248B9D2CD6D73A0868179C2758E9962B64A83020B215A335CF579C2758E9962B64A83020B215A335CF5B8CF81F5D688814393F0DF13F9C27DAB26B8A79006DF6248B9D2CD6D73A08681"
+                    },
+                    {
+                        "name":  "preset_guid_table_2",
+                        "description":  "Second legacy preset GUID table -> NVIDIA P1-P7 preset GUIDs",
+                        "offset":  "0xC3B08",
+                        "rva":  "0xC4D08",
+                        "section":  ".rdata",
+                        "length":  144,
+                        "old":  "E798991464231D4182EF17988809340916B7BFD504C6E7449BB8DEA5510FC3AC442A0867AD4BFA4898EA93056D150A58B933F7C597EAF94CBEC2BF78A74FD105C521DF49FA6DEB4F97876ACC9EFFB72650E4E382BBBD404E989C82A90DF9EF321DA7DB347BA78F4B9C3EB6D5DA24C0129FC5E46046E88444A56DCD45BE9FDDF605B7DFB2BD4E494C9B5F24A777D3E587",
+                        "new":  "128C8484716F134C931B53E283F57974128C8484716F134C931B53E283F57974B8CF81F5D688814393F0DF13F9C27DABB4E6C6217A29BA4C998FB6CBDE72ADE326B8A79006DF6248B9D2CD6D73A0868179C2758E9962B64A83020B215A335CF579C2758E9962B64A83020B215A335CF5B8CF81F5D688814393F0DF13F9C27DAB26B8A79006DF6248B9D2CD6D73A08681"
+                    }
+                ]
+}

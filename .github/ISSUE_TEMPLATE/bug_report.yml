@@ -1,0 +1,91 @@
+name: Bug report
+description: Report a patch, probe, or recording problem
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not upload LogiCapture, `VHMultiWriterExt2.exe`, `VHMediaCOM.dll`, or other proprietary binaries.
+        Attach only text logs and your own recordings if necessary.
+
+  - type: input
+    id: logi-version
+    attributes:
+      label: LogiCapture version
+      description: Version shown in the application or file properties.
+      placeholder: "2.08.11"
+    validations:
+      required: true
+
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version and build
+      placeholder: "Windows 11 26H2, build 26300.9711"
+    validations:
+      required: true
+
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU and NVIDIA driver
+      placeholder: "RTX 3080 Ti, 32.0.16.1714"
+    validations:
+      required: true
+
+  - type: textarea
+    id: verify
+    attributes:
+      label: Output of src/verify.ps1
+      description: Paste the console output, not a screenshot.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: probe
+    attributes:
+      label: Probe output and exit code
+      description: Result of `VHMultiWriterExt2.exe h264nvenc_probe` and `$LASTEXITCODE`.
+      render: text
+    validations:
+      required: true
+
+  - type: dropdown
+    id: recording
+    attributes:
+      label: Real recording result
+      options:
+        - Works with NVIDIA NVENC
+        - Recording starts but is empty/corrupt
+        - Recording fails to start
+        - Not tested yet
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What you ran, what happened, and what you expected.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Patch log
+      description: Paste relevant lines from `%LOCALAPPDATA%\LogiCaptureNVENC\patch.log`.
+      render: text
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I did not attach proprietary Logitech or NVIDIA binaries.
+          required: true
+        - label: I ran the patcher against a supported original build.
+          required: true
